@@ -1,0 +1,34 @@
+{
+  "name": "gatsby-v2-starter",
+  "version": "0.0.1",
+  "author": "Michael Daniel Padilla <michaeldpadilla@gmail.com> (https://mikedpad.com)",
+  "description": "A Sass-tastic Gatsby (v2) starter with semicolons. Follows (most of) eslint-config-airbnb.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikedpad/gatsby-v2-starter.git"
+  },
+  "scripts": {
+    "start": "npm run develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "next",
+    "gatsby-plugin-manifest": "next",
+    "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-sass": "^2.0.0-beta.1",
+    "node-sass": "^4.9.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1"
+  }
+}

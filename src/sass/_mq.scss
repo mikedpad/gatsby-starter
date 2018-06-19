@@ -1,0 +1,48 @@
+$small: 480px;
+$medium: 768px;
+$large: 960px;
+
+$smMq: 'only screen and (min-width: #{$small})';
+$mdMq: 'only screen and (min-width: #{$medium})';
+$lgMq: 'only screen and (min-width: #{$large})';
+
+// Basic Media Queries
+@mixin mq($size) {
+  @media #{$size} {
+    @content;
+  }
+}
+
+@mixin sm {
+  @include mq($smMq) {
+    @content;
+  }
+}
+
+@mixin md {
+  @include mq($mdMq) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @include mq($lgMq) {
+    @content;
+  }
+}
+
+// Wrapped Content Media Queries
+@mixin maxWidth($size) {
+  max-width: $size;
+}
+@mixin smMaxWidth {
+  @include maxWidth($small);
+}
+
+@mixin mdMaxWidth {
+  @include maxWidth($medium);
+}
+
+@mixin lgMaxWidth {
+  @include maxWidth($large);
+}
