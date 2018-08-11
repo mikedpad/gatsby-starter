@@ -35,6 +35,7 @@ $lgMq: 'only screen and (min-width: #{$large})';
 @mixin maxWidth($size) {
   max-width: $size;
 }
+
 @mixin smMaxWidth {
   @include maxWidth($small);
 }

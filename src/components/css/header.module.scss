@@ -1,5 +1,7 @@
+@import 'customColors';
+
 .header {
-  background-color: #639;
+  background-color: lighten($color: $bgColor, $amount: 5%);
   margin-bottom: 1.45rem;
 }
 
