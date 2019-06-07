@@ -1,0 +1,46 @@
+@import 'fonts';
+@import 'customColors';
+@import '~normalize.css/normalize';
+
+:root {
+  background-color: $bgColor;
+  color: $textColor;
+  font-family: $sansSerif;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  font-family: $serif;
+}
+
+code,
+kbd,
+pre,
+samp,
+var {
+  font-family: $monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $headlineColor;
+  font-family: $sansSerif;
+}
+
+a {
+  color: $linkColor;
+
+  &:visited,
+  &:link {
+    color: $linkColor;
+  }
+
+  &:hover,
+  &:active {
+    color: $linkColorActive;
+  }
+}

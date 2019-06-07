@@ -1,0 +1,62 @@
+@import 'mq';
+@import 'customColors';
+
+.main {
+  overflow: auto;
+  padding: 2rem 0 0;
+}
+
+.header {
+  background-color: lighten($color: $bgColor, $amount: 5%);
+  margin-bottom: 1.45rem;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.h1 {
+  margin: 0;
+}
+
+.titleLink {
+  color: #fff;
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+
+  @include md {
+    @include mdMaxWidth;
+  }
+
+  @include lg {
+    @include lgMaxWidth;
+  }
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.li {
+  display: inline-block;
+}
+
+.navLink {
+  background-color: inherit;
+  padding: 8px 10px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out;
+
+  &:hover {
+    background-color: #ffffff33;
+  }
+}

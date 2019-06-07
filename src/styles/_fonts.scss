@@ -1,3 +1,7 @@
 $defaultSerif: 'Times New Roman', Times, serif;
 $defaultSansSerif: Helvetica, Arial, sans-serif;
 $defaultMonospace: 'Inconsolata', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+
+$serif: 'Lora', $defaultSerif;
+$sansSerif: 'Source Sans Pro', $defaultSansSerif;
+$monospace: 'Source Code Pro', $defaultMonospace;

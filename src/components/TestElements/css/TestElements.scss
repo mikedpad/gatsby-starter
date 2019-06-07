@@ -1,0 +1,32 @@
+@import 'customColors';
+
+section {
+  > header {
+    h1 {
+      background-color: #789;
+      font-size: 3rem;
+      padding: 1rem 2rem;
+    }
+  }
+
+  article {
+    padding: 0 2rem;
+
+    > header {
+      h1 {
+        border-bottom: 1px solid $textColor;
+        box-sizing: unset;
+        margin-bottom: 0.67em;
+        padding-bottom: 0.2em;
+      }
+    }
+  }
+}
+
+fieldset {
+  border: 1px solid $textColor;
+
+  legend {
+    padding: 0.5rem;
+  }
+}

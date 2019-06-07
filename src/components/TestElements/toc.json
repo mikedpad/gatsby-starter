@@ -1,0 +1,112 @@
+[
+  {
+    "href": "#text",
+    "label": "Text",
+    "child": [
+      {
+        "href": "#text__headings",
+        "label": "Headings"
+      },
+      {
+        "href": "#text__paragraphs",
+        "label": "Paragraphs"
+      },
+      {
+        "href": "#text__blockquotes",
+        "label": "Blockquotes"
+      },
+      {
+        "href": "#text__lists",
+        "label": "Lists"
+      },
+      {
+        "href": "#text__hr",
+        "label": "Horizonta"
+      },
+      {
+        "href": "#text__tables",
+        "label": "Tabular data"
+      },
+      {
+        "href": "#text__code",
+        "label": "Code"
+      },
+      {
+        "href": "#text__inline",
+        "label": "Inline elements"
+      }
+    ]
+  },
+  {
+    "href": "#embedded",
+    "label": "Embedded content",
+    "child": [
+      {
+        "href": "#embedded__images",
+        "label": "Images"
+      },
+      {
+        "href": "#embedded__audio",
+        "label": "Audio"
+      },
+      {
+        "href": "#embedded__vhrefeo",
+        "label": "Vhrefeo"
+      },
+      {
+        "href": "#embedded__canvas",
+        "label": "Canvas"
+      },
+      {
+        "href": "#embedded__meter",
+        "label": "Meter"
+      },
+      {
+        "href": "#embedded__progress",
+        "label": "Progress"
+      },
+      {
+        "href": "#embedded__svg",
+        "label": "Inline SVG"
+      },
+      {
+        "href": "#embedded__iframe",
+        "label": "IFrames"
+      }
+    ]
+  },
+  {
+    "href": "#forms",
+    "label": "Form elements",
+    "child": [
+      {
+        "href": "#forms__input",
+        "label": "Input fields"
+      },
+      {
+        "href": "#forms__select",
+        "label": "Select menus"
+      },
+      {
+        "href": "#forms__checkbox",
+        "label": "Checkboxes"
+      },
+      {
+        "href": "#forms__radio",
+        "label": "Radio buttons"
+      },
+      {
+        "href": "#forms__textareas",
+        "label": "Textareas"
+      },
+      {
+        "href": "#forms__html5",
+        "label": "HTML5 inputs"
+      },
+      {
+        "href": "#forms__action",
+        "label": "Action buttons"
+      }
+    ]
+  }
+]
