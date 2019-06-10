@@ -1,1 +1,1 @@
-export { default } from './context';
+export { SiteContext, SiteProvider } from './context';

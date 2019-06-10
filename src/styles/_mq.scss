@@ -30,20 +30,3 @@ $lgMq: 'only screen and (min-width: #{$large})';
     @content;
   }
 }
-
-// Wrapped Content Media Queries
-@mixin maxWidth($size) {
-  max-width: $size;
-}
-
-@mixin smMaxWidth {
-  @include maxWidth($small);
-}
-
-@mixin mdMaxWidth {
-  @include maxWidth($medium);
-}
-
-@mixin lgMaxWidth {
-  @include maxWidth($large);
-}

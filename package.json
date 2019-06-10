@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-v2-starter",
-  "version": "0.2.0",
+  "name": "gatsby-starter",
+  "version": "0.3.0",
   "author": "Michael Daniel Padilla <michaeldpadilla@gmail.com> (https://mikedpad.com)",
   "description": "A Sass-tastic Gatsby starting point for some of my projects",
   "license": "MIT",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
+    "polished": "^3.4.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
@@ -31,7 +32,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "gatsby": "^2.8.5",
+    "gatsby": "^2.8.6",
+    "gatsby-image": "^2.1.2",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -46,6 +48,6 @@
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.21",
     "node-sass": "^4.12.0",
-    "prettier": "^1.17.1"
+    "prettier": "^1.18.2"
   }
 }

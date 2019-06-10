@@ -1,7 +1,7 @@
 [
   {
     "href": "#text",
-    "label": "Text",
+    "label": "Text Elements",
     "child": [
       {
         "href": "#text__headings",
@@ -21,7 +21,7 @@
       },
       {
         "href": "#text__hr",
-        "label": "Horizonta"
+        "label": "Horizontal Rule"
       },
       {
         "href": "#text__tables",
@@ -39,7 +39,7 @@
   },
   {
     "href": "#embedded",
-    "label": "Embedded content",
+    "label": "Embedded Content",
     "child": [
       {
         "href": "#embedded__images",
@@ -50,8 +50,8 @@
         "label": "Audio"
       },
       {
-        "href": "#embedded__vhrefeo",
-        "label": "Vhrefeo"
+        "href": "#embedded__video",
+        "label": "Video"
       },
       {
         "href": "#embedded__canvas",
@@ -77,15 +77,15 @@
   },
   {
     "href": "#forms",
-    "label": "Form elements",
+    "label": "Form Elements",
     "child": [
       {
         "href": "#forms__input",
-        "label": "Input fields"
+        "label": "Input Fields"
       },
       {
         "href": "#forms__select",
-        "label": "Select menus"
+        "label": "Select Menus"
       },
       {
         "href": "#forms__checkbox",
@@ -93,19 +93,19 @@
       },
       {
         "href": "#forms__radio",
-        "label": "Radio buttons"
+        "label": "Radio Buttons"
       },
       {
         "href": "#forms__textareas",
-        "label": "Textareas"
+        "label": "TextArea"
       },
       {
         "href": "#forms__html5",
-        "label": "HTML5 inputs"
+        "label": "HTML5 Inputs"
       },
       {
         "href": "#forms__action",
-        "label": "Action buttons"
+        "label": "Action Buttons"
       }
     ]
   }

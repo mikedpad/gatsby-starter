@@ -1,9 +1,67 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import styled, { createGlobalStyle } from 'styled-components';
+import { fluidRange, lighten } from 'polished';
 import SiteLink from '../SiteLink/SiteLink';
-import style from './Layout.module.scss';
-import '../../styles/global.scss';
+import Navigation from './Navigation';
+import { sansSerif } from '../../styles/fonts';
+import { bg, fg } from '../../styles/colors';
+
+const GlobalCSS = createGlobalStyle`
+  :root {
+    background-color: ${bg};
+    color: ${fg};
+    font-family: ${sansSerif};
+    text-rendering: optimizeLegibility;
+  }
+`;
+
+const Header = styled.header`
+  background-color: ${lighten(0.05, bg)};
+  margin-bottom: 1.45rem;
+`;
+
+const Main = styled.main`
+  overflow: auto;
+  padding: 0;
+`;
+
+const Wrapper = styled.div`
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+
+  ${fluidRange(
+    {
+      prop: `max-width`,
+      fromSize: `600px`,
+      toSize: `960px`,
+    },
+    `640px`,
+    `1200px`,
+  )}
+`;
+
+const FlexWrap = styled.div`
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+`;
+
+const Title = styled.h1`
+  margin: 0;
+`;
+
+const TitleLink = styled(SiteLink)`
+  color: ${fg};
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+
+  &:hover {
+    color: #fff;
+  }
+`;
 
 const Layout = ({ children }) => {
   const {
@@ -22,37 +80,25 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <GlobalCSS />
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      <header className={style.header}>
-        <div className={style.wrapper}>
-          <div className={style.flex}>
-            <h1 className={style.h1}>
-              <SiteLink to="/" className={style.titleLink}>
-                {title}
-              </SiteLink>
-            </h1>
-            <nav className={style.nav}>
-              <ul className={style.ul}>
-                <li className={style.li}>
-                  <SiteLink to="/" className={style.navLink}>
-                    Home
-                  </SiteLink>
-                </li>
-                <li className={style.li}>
-                  <SiteLink to="/page-2" className={style.navLink}>
-                    Page 2
-                  </SiteLink>
-                </li>
-              </ul>
+      <Header>
+        <Wrapper>
+          <FlexWrap>
+            <Title>
+              <TitleLink to="/">{title}</TitleLink>
+            </Title>
+            <nav>
+              <Navigation />
             </nav>
-          </div>
-        </div>
-      </header>
-      <main className={style.main}>
-        <div className={style.wrapper}>{children}</div>
-      </main>
+          </FlexWrap>
+        </Wrapper>
+      </Header>
+      <Main>
+        <Wrapper>{children}</Wrapper>
+      </Main>
     </>
   );
 };
