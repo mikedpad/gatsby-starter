@@ -10,19 +10,16 @@ const PageHeadline = styled.h1`
   color: #fff;
 `;
 
-const Description = styled.p`
-  padding: 0 1rem;
-`;
-
 const TestElements = () => {
   return (
     <>
       <header role="banner">
-        <PageHeadline>(React) HTML5 Test Page</PageHeadline>
-        <Description>
-          This is a test page filled with common HTML elements… but rather than be used to build CSS
-          styles, these elements are just fodder for demonstrational purposes.
-        </Description>
+        <PageHeadline>Content Test Page</PageHeadline>
+        <p>
+          This is a test page filled with common HTML elements wrapped in React components… but
+          rather than be used to build CSS styles, these elements are just fodder for
+          demonstrational purposes.
+        </p>
       </header>
       <TableOfContents />
       <main role="main">
@@ -32,12 +29,11 @@ const TestElements = () => {
       </main>
       <footer role="contentinfo">
         <p>
-          Modified by <SiteLink href="https://github.com/mikedpad">Michael Daniel Padilla</SiteLink>
-          .
+          Modified by <SiteLink to="https://github.com/mikedpad">Michael Daniel Padilla</SiteLink>.
         </p>
         <p>
           Forked from{` `}
-          <SiteLink href="https://github.com/cbracco/html5-test-page">HTML5 Test Page</SiteLink>.
+          <SiteLink to="https://github.com/cbracco/html5-test-page">HTML5 Test Page</SiteLink>.
         </p>
       </footer>
     </>

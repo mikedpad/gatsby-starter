@@ -9,12 +9,18 @@ const Nav = styled.nav`
 `;
 
 const UnorderedList = styled.ul`
-  display: ${props => (props.child ? `block` : `flex`)};
   justify-content: space-around;
-  list-style-type: ${props => (props.child ? `square` : `none`)};
-  margin: 0;
+  list-style-type: none;
+  margin: ${props => (props.child ? `0 0 2rem` : `0`)};
   padding: 0;
-  /* padding: ${props => (props.child ? `0 0 0 1rem` : `1rem 0`)}; */
+  text-align: center;
+
+  @media only screen and (min-width: 560px) {
+    display: ${props => (props.child ? `block` : `flex`)};
+    list-style-type: ${props => (props.child ? `square` : `none`)};
+    margin: 0;
+    text-align: left;
+  }
 `;
 
 const ListItem = styled.li`
@@ -23,7 +29,10 @@ const ListItem = styled.li`
   ${UnorderedList} li & {
     color: ${darken(0.4, fg)};
     display: list-item;
-    margin: 0 0 0 2.5rem;
+
+    @media only screen and (min-width: 560px) {
+      margin: 0 0 0 2.5rem;
+    }
 
     &:hover {
       color: ${darken(0.2, fg)};

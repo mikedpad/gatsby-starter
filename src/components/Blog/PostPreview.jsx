@@ -1,23 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Link, graphql } from 'gatsby';
-
-const Article = styled.article``;
-
-const DateTime = styled.time``;
-
-const PostLink = styled(Link)``;
-
-const Title = styled.h1``;
+import { graphql } from 'gatsby';
+import SiteLink from '../SiteLink';
 
 const PostPreview = ({ id, fields: { path }, frontmatter: { title, date, dateFormat } }) => (
-  <Article key={id} data-post-id={id}>
-    <DateTime dateTime={date}>{dateFormat}</DateTime>
-    <PostLink to={path}>
-      <Title>{title}</Title>
-    </PostLink>
-  </Article>
+  <article key={id} data-post-id={id}>
+    <time dateTime={date}>{dateFormat}</time>
+    <SiteLink to={path}>
+      <h1>{title}</h1>
+    </SiteLink>
+  </article>
 );
 
 export default PostPreview;

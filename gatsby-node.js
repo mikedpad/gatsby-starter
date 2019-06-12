@@ -1,20 +1,20 @@
 const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const slugify = require(`slugify`);
 
-exports.onCreateNode = ({ node, actions: { createNodeField }, getNode }) => {
+exports.onCreateNode = ({ node, actions: { createNodeField } }) => {
+  // Create slugs for blog posts
   if (node.internal.type === `MarkdownRemark`) {
-    const nodeSlug = createFilePath({ node, getNode });
-    const contentType = node.fileAbsolutePath.split(`/markdown/`)[1].split(`/`)[0];
-    const pathValue = `/${contentType}${nodeSlug}`;
+    const slug = slugify(node.frontmatter.slug || node.frontmatter.title, { lower: true });
     createNodeField({
       name: `path`,
       node,
-      value: pathValue,
+      value: `/blog/${slug}`,
     });
   }
 };
 
 exports.createPages = ({ actions: { createPage }, graphql }) =>
+  // Query blog posts and create individual pages
   graphql(`
     {
       blog: allMarkdownRemark(
@@ -30,17 +30,14 @@ exports.createPages = ({ actions: { createPage }, graphql }) =>
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors);
+  `).then(({ errors, data: { blog: { edges } } }) => {
+    if (errors) {
+      return Promise.reject(errors);
     }
 
-    const blogEdges = result.data.blog.edges;
-
-    // Log: Create page for each post
-    blogEdges.forEach(({ node }) => {
+    edges.forEach(({ node: { fields: { path: pagePath } } }) => {
       createPage({
-        path: node.fields.path,
+        path: pagePath,
         component: path.resolve(`src/templates/PostTemplate.jsx`),
         context: {},
       });
