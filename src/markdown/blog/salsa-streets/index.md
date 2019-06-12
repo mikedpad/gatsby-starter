@@ -9,6 +9,8 @@ Vegan adipisicing helvetica, pour-over velit est green juice waistcoat exercitat
 
 VHS paleo sartorial photo booth, shabby chic four dollar toast tacos sustainable truffaut single-origin coffee. Qui whatever chicharrones est skateboard, keytar tumblr hell of asymmetrical ex irony. Pickled minim eu tacos lyft magna. Actually duis narwhal viral, echo park affogato ennui meditation. Wolf gochujang keffiyeh, air plant hashtag green juice ennui celiac next level veniam.
 
+![Why is there a dragon here?](../mind-needs-books/dragon.jpg)
+
 Vegan tumblr kale chips before they sold out, bitters meh letterpress gluten-free taiyaki artisan. Heirloom YOLO swag pitchfork shoreditch yr. Eu brooklyn glossier edison bulb, bicycle rights mumblecore tumeric woke actually mollit quis velit gochujang laboris brunch. Id everyday carry portland pop-up, in echo park brunch 90's swag woke.
 
 Freegan distillery sartorial polaroid tilde. Jianbing shoreditch polaroid lomo. Tumeric mumblecore XOXO, four dollar toast fingerstache tilde aliqua pinterest letterpress vegan banh mi cray. Cardigan ramps polaroid salvia.
