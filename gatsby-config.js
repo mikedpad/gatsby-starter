@@ -3,7 +3,7 @@ const siteData = {
   description: `A slightly different flavor of the Gatsby starter.`,
   manifest: {
     background_color: `#ffffff`,
-    theme_color: `#639`,
+    theme_color: `#2f3740`,
     display: `standalone`,
     icons: [
       // {
@@ -29,33 +29,21 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        includePaths: [`./src/styles`],
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: siteData.title,
-        short_name: siteData.shortTitle,
         description: siteData.description,
-        startUrl: siteData.manifest.startUrl,
-        lang: `en-US`,
-        background_color: siteData.manifest.background_color,
+        short_name: siteData.manifest.shortTitle,
+        start_url: siteData.manifest.startUrl,
+        background_color: siteData.manifest.background,
         theme_color: siteData.manifest.theme_color,
-        icons: siteData.manifest.icons,
+        lang: `en-US`,
+        icons: [],
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `./src/data/`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -71,19 +59,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: siteData.title,
-        short_name: siteData.manifest.shortTitle,
-        description: siteData.description,
-        start_url: siteData.manifest.startUrl,
-        background_color: siteData.manifest.background,
-        theme_color: siteData.manifest.theme_color,
-        display: siteData.manifest.display,
-      },
-    },
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
