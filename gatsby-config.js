@@ -19,6 +19,7 @@ const siteData = {
 
 module.exports = {
   siteMetadata: siteData,
+  pathPrefix: `/gatsby-starter`,
   plugins: [
     {
       resolve: `gatsby-plugin-sharp`,
