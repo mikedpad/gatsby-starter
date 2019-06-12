@@ -1,13 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 const SiteLink = ({ children, to, ...other }) => {
   const internal = /^\/(?!\/)/.test(to);
+  const navigateToSelf = event => {
+    const { pathname } = event.target;
+
+    if (pathname === document.location.pathname) {
+      event.stopPropagation();
+      navigate(pathname, { replace: true });
+      return;
+    }
+
+    event.preventDefault();
+    navigate(pathname);
+  };
 
   if (internal) {
     return (
-      <Link to={to} {...other}>
+      <Link to={to} onClick={navigateToSelf} {...other}>
         {children}
       </Link>
     );
