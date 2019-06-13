@@ -31,7 +31,7 @@ const PostTemplate = ({
     },
   },
 }) => (
-  <Layout>
+  <Layout title={`: ${title}`}>
     <Article data-post-id={id}>
       <header>
         <Title>{title}</Title>

@@ -1,9 +1,10 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { createGlobalStyle } from 'styled-components';
 import { fluidRange, lighten } from 'polished';
-import SiteLink from '../SiteLink/SiteLink';
+import Link from '../Link';
 import Navigation from './Navigation';
 import { sansSerif } from '../../styles/fonts';
 import { bg, fg } from '../../styles/colors';
@@ -53,7 +54,7 @@ const Title = styled.h1`
   margin: 0;
 `;
 
-const TitleLink = styled(SiteLink)`
+const TitleLink = styled(Link)`
   color: ${fg};
   text-decoration: none;
   transition: color 0.2s ease-out;
@@ -63,10 +64,10 @@ const TitleLink = styled(SiteLink)`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ title, children }) => {
   const {
     site: {
-      siteMetadata: { title },
+      siteMetadata: { title: siteTitle },
     },
   } = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -82,13 +83,13 @@ const Layout = ({ children }) => {
     <>
       <GlobalCSS />
       <Helmet>
-        <title>{title}</title>
+        <title>{`${siteTitle}${title || ``}`}</title>
       </Helmet>
       <Header>
         <Wrapper>
           <FlexWrap>
             <Title>
-              <TitleLink to="/">{title}</TitleLink>
+              <TitleLink to="/">{siteTitle}</TitleLink>
             </Title>
             <nav>
               <Navigation />
@@ -104,3 +105,11 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
+Layout.propTypes = {
+  title: PropTypes.string,
+};
+
+Layout.defaultProps = {
+  title: null,
+};

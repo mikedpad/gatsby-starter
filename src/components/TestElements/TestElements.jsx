@@ -4,7 +4,7 @@ import TableOfContents from './TableOfContents';
 import Text from './Elements/Text';
 import Embedded from './Elements/Embedded';
 import Form from './Elements/Form';
-import SiteLink from '../SiteLink';
+import Link from '../Link';
 
 const PageHeadline = styled.h1`
   color: #fff;
@@ -29,11 +29,11 @@ const TestElements = () => {
       </main>
       <footer role="contentinfo">
         <p>
-          Modified by <SiteLink to="https://github.com/mikedpad">Michael Daniel Padilla</SiteLink>.
+          Modified by <Link to="https://github.com/mikedpad">Michael Daniel Padilla</Link>.
         </p>
         <p>
           Forked from{` `}
-          <SiteLink to="https://github.com/cbracco/html5-test-page">HTML5 Test Page</SiteLink>.
+          <Link to="https://github.com/cbracco/html5-test-page">HTML5 Test Page</Link>.
         </p>
       </footer>
     </>

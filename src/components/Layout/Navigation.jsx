@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SiteLink from '../SiteLink';
+import Link from '../Link';
 import { links } from '../../styles/colors';
 
 const UnorderedList = styled.ul`
@@ -18,7 +18,7 @@ const ListItem = styled.li`
   }
 `;
 
-const NavLink = styled(SiteLink)`
+const NavLink = styled(Link)`
   background-color: inherit;
   color: ${links.normal};
   font-size: 1.25rem;

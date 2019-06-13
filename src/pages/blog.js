@@ -21,7 +21,7 @@ const Blog = () => {
     }
   `);
   return (
-    <Layout>
+    <Layout title=": Blog">
       {edges.map(({ node }) => (
         <PostPreview key={node.id} {...node} />
       ))}

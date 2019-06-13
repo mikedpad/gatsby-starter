@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import SiteLink from '../SiteLink';
+import Link from '../Link';
 
 const PostPreview = ({ id, fields: { path }, frontmatter: { title, date, dateFormat } }) => (
   <article key={id} data-post-id={id}>
     <time dateTime={date}>{dateFormat}</time>
-    <SiteLink to={path}>
+    <Link to={path}>
       <h1>{title}</h1>
-    </SiteLink>
+    </Link>
   </article>
 );
 
