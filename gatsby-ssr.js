@@ -1,6 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
-import { renderToString } from 'react-dom/server';
 import { normalize } from 'polished';
 import { createGlobalStyle } from 'styled-components';
 import { sansSerif } from './src/styles/fonts';
@@ -19,12 +18,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
-  const ConnectedBody = (
+export const wrapRootElement = ({ element }) => {
+  const ConnectedRootElement = (
     <>
       <GlobalStyle />
-      <SiteProvider>{bodyComponent}</SiteProvider>
+      <SiteProvider>{element}</SiteProvider>
     </>
   );
-  replaceBodyHTMLString(renderToString(<ConnectedBody />));
+  return ConnectedRootElement;
 };
