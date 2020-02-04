@@ -26,6 +26,8 @@
         "int32Hint": true
       }
     ],
+    "no-console": [1, { "allow": ["warn", "error"] }],
+    "no-nested-ternary": 0,
     "no-plusplus": [
       0,
       {
@@ -50,6 +52,12 @@
       {
         "js": "never",
         "json": "always"
+      }
+    ],
+    "import/order": [
+      2,
+      {
+        "newlines-between": "never"
       }
     ],
     "import/no-extraneous-dependencies": [

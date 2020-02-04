@@ -3,17 +3,12 @@ const siteData = {
   description: `A slightly different flavor of the Gatsby starter.`,
   manifest: {
     background_color: `#ffffff`,
+    display: `minimal-ui`,
+    icons: [],
+    lang: `en-US`,
+    short_name: `GatsbyStarter`,
+    start_url: `/`,
     theme_color: `#2f3740`,
-    display: `standalone`,
-    icons: [
-      // {
-      //   src: 'favicon.ico',
-      //   sizes: '64x64 32x32 24x24 16x16',
-      //   type: 'image/x-icon',
-      // },
-    ],
-    shortTitle: `GatsbyStarter`,
-    startUrl: `/`,
   },
 };
 
@@ -28,21 +23,20 @@ module.exports = {
         stripMetadata: true,
       },
     },
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
+        ...siteData.manifest,
         name: siteData.title,
         description: siteData.description,
-        short_name: siteData.manifest.shortTitle,
-        start_url: siteData.manifest.startUrl,
-        background_color: siteData.manifest.background,
-        theme_color: siteData.manifest.theme_color,
-        lang: `en-US`,
-        icons: [],
       },
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        pure: true,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
     {
@@ -60,6 +54,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
@@ -75,15 +70,10 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // CommonMark mode (default: true)
         commonmark: true,
-        // Footnotes mode (default: true)
         footnotes: true,
-        // Pedantic mode (default: true)
         pedantic: true,
-        // GitHub Flavored Markdown mode (default: true)
         gfm: true,
-        // Plugins configs
         plugins: [
           `gatsby-remark-unwrap-images`,
           {

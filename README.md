@@ -1,10 +1,10 @@
 # gatsby-starter
 
-Gatsby's default starter with a few changes.
+A starting point for my Gatsby projects
 
-### Differences from Gatsby's starter:
+### Features
 
-- Semicolons! Lots of them!!!
+- Styled-Components and Polished in place of Sass/Less/CSS
+- Prettier formatting
 - ESLint for linting and formatting
-- Sass + CSS Modules for components
-- VSCode settings
+- Semicolons!
