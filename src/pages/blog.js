@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/Layout';
-import PostPreview from '../components/Blog/PostPreview';
+import PostPreview from '../components/PostPreview';
 
-const Blog = () => {
+export default () => {
   const {
     allMarkdownRemark: { edges },
   } = useStaticQuery(graphql`
@@ -14,7 +14,15 @@ const Blog = () => {
       ) {
         edges {
           node {
-            ...PostPreviewFragment
+            id
+            fields {
+              path
+            }
+            frontmatter {
+              title
+              date
+              dateFormat: date(formatString: "MMM D, YYYY")
+            }
           }
         }
       }
@@ -22,11 +30,16 @@ const Blog = () => {
   `);
   return (
     <Layout title=": Blog">
-      {edges.map(({ node }) => (
-        <PostPreview key={node.id} {...node} />
+      {edges.map(({ node: { id, fields, frontmatter } }) => (
+        <PostPreview
+          key={id}
+          id={id}
+          path={fields.path}
+          title={frontmatter.title}
+          date={frontmatter.date}
+          dateFormat={frontmatter.dateFormat}
+        />
       ))}
     </Layout>
   );
 };
-
-export default Blog;

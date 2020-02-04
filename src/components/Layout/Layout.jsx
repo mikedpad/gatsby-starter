@@ -1,26 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import styled, { createGlobalStyle } from 'styled-components';
-import { fluidRange, lighten } from 'polished';
+import styled from 'styled-components';
+import { lighten } from 'polished';
 import Link from '../Link';
-import Navigation from './Navigation';
-import { sansSerif } from '../../styles/fonts';
-import { bg, fg } from '../../styles/colors';
-
-const GlobalCSS = createGlobalStyle`
-  :root {
-    background-color: ${bg};
-    color: ${fg};
-    font-family: ${sansSerif};
-    text-rendering: optimizeLegibility;
-  }
-`;
+import { bg, fg, links } from '../../styles/colors';
+import { minWidth, maxWidth } from '../../styles/mq';
+import SEO from '../SEO';
 
 const Header = styled.header`
   background-color: ${lighten(0.05, bg)};
-  margin-bottom: 1.45rem;
 `;
 
 const Main = styled.main`
@@ -28,30 +16,27 @@ const Main = styled.main`
   padding: 0;
 `;
 
-const Wrapper = styled.div`
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem;
-
-  ${fluidRange(
-    {
-      prop: `max-width`,
-      fromSize: `600px`,
-      toSize: `960px`,
-    },
-    `640px`,
-    `1200px`,
-  )}
-`;
-
-const FlexWrap = styled.div`
-  align-items: center;
+const Container = styled.div`
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: ${props => props.orientation} nowrap;
   justify-content: space-between;
+  margin: 0;
+
+  @media (${minWidth.mobileLarge}) {
+    margin: 0 auto;
+    ${maxWidth.mobileLarge};
+  }
+
+  @media (${minWidth.tablet}) {
+    margin: 0 auto;
+    ${maxWidth.tablet};
+  }
 `;
 
 const Title = styled.h1`
+  display: block;
   margin: 0;
+  white-space: nowrap;
 `;
 
 const TitleLink = styled(Link)`
@@ -64,10 +49,41 @@ const TitleLink = styled(Link)`
   }
 `;
 
-const Layout = ({ title, children }) => {
+const UnorderedList = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const ListItem = styled.li`
+  display: inline-block;
+  margin-left: 0.75rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+`;
+
+const NavLink = styled(Link)`
+  background-color: inherit;
+  color: ${links.normal};
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 300;
+  padding: 8px 10px;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background-color: #ffffff33;
+    color: #fff;
+  }
+`;
+
+export default ({ children }) => {
   const {
     site: {
-      siteMetadata: { title: siteTitle },
+      siteMetadata: { title },
     },
   } = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -81,35 +97,27 @@ const Layout = ({ title, children }) => {
 
   return (
     <>
-      <GlobalCSS />
-      <Helmet>
-        <title>{`${siteTitle}${title || ``}`}</title>
-      </Helmet>
+      <SEO />
       <Header>
-        <Wrapper>
-          <FlexWrap>
-            <Title>
-              <TitleLink to="/">{siteTitle}</TitleLink>
-            </Title>
-            <nav>
-              <Navigation />
-            </nav>
-          </FlexWrap>
-        </Wrapper>
+        <Container orientation="row">
+          <Title>
+            <TitleLink to="/">{title}</TitleLink>
+          </Title>
+          <nav>
+            <UnorderedList>
+              <ListItem>
+                <NavLink to="/">Home</NavLink>
+              </ListItem>
+              <ListItem>
+                <NavLink to="/blog">Blog</NavLink>
+              </ListItem>
+            </UnorderedList>
+          </nav>
+        </Container>
       </Header>
       <Main>
-        <Wrapper>{children}</Wrapper>
+        <Container orientation="column">{children}</Container>
       </Main>
     </>
   );
-};
-
-export default Layout;
-
-Layout.propTypes = {
-  title: PropTypes.string,
-};
-
-Layout.defaultProps = {
-  title: null,
 };

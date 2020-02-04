@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
 import { links, fg, bg } from '../../styles/colors';
+import { minWidth, maxWidth } from '../../styles/mq';
 import toc from './toc.json';
 
 const Nav = styled.nav`
@@ -15,7 +16,7 @@ const UnorderedList = styled.ul`
   padding: 0;
   text-align: center;
 
-  @media only screen and (min-width: 560px) {
+  @media (${minWidth.mobileLarge}) {
     display: ${props => (props.child ? `block` : `flex`)};
     list-style-type: ${props => (props.child ? `square` : `none`)};
     margin: 0;

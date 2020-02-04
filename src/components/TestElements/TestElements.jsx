@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from '../Link';
 import TableOfContents from './TableOfContents';
 import Text from './Elements/Text';
 import Embedded from './Elements/Embedded';
 import Form from './Elements/Form';
-import Link from '../Link';
 
 const PageHeadline = styled.h1`
   color: #fff;
