@@ -1,6 +1,7 @@
 const siteData = {
   title: `Gatsby Starter`,
   description: `A slightly different flavor of the Gatsby starter.`,
+  author: `Michael Daniel Padilla`,
   manifest: {
     background_color: `#ffffff`,
     display: `minimal-ui`,
