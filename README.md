@@ -1,10 +1,10 @@
 # gatsby-starter
 
-A starting point for my Gatsby projects
+A template for Gatsby projects.
 
-### Features
+## Features
 
-- Styled-Components and Polished in place of Sass/Less/CSS
+- `styled-components` and `polished` in place of Sass
 - Prettier formatting
 - ESLint for linting and formatting
 - Semicolons!
