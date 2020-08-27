@@ -2,9 +2,9 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { lighten } from 'polished';
+import media, { defaultBreakpoints } from 'styled-media-query';
 import Link from '../Link';
 import { bg, fg, links } from '../../styles/colors';
-import { minWidth, maxWidth } from '../../styles/mq';
 import SEO from '../SEO';
 
 const Header = styled.header`
@@ -22,15 +22,16 @@ const Container = styled.div`
   justify-content: space-between;
   margin: 0;
 
-  @media (${minWidth.mobileLarge}) {
-    margin: 0 auto;
-    ${maxWidth.mobileLarge};
-  }
 
-  @media (${minWidth.tablet}) {
+  ${media.greaterThan(`small`)`
     margin: 0 auto;
-    ${maxWidth.tablet};
-  }
+    max-width: ${defaultBreakpoints.small};
+  `};
+
+  ${media.greaterThan(`medium`)`
+    margin: 0 auto;
+    max-width: ${defaultBreakpoints.medium};
+  `};
 `;
 
 const Title = styled.h1`

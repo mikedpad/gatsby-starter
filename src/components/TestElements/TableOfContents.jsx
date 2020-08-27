@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
+import media from 'styled-media-query';
 import { links, fg, bg } from '../../styles/colors';
-import { minWidth, maxWidth } from '../../styles/mq';
 import toc from './toc.json';
 
 const Nav = styled.nav`
@@ -16,12 +16,12 @@ const UnorderedList = styled.ul`
   padding: 0;
   text-align: center;
 
-  @media (${minWidth.mobileLarge}) {
+  ${media.greaterThan(`small`)`
     display: ${props => (props.child ? `block` : `flex`)};
     list-style-type: ${props => (props.child ? `square` : `none`)};
     margin: 0;
     text-align: left;
-  }
+  `};
 `;
 
 const ListItem = styled.li`
@@ -31,9 +31,9 @@ const ListItem = styled.li`
     color: ${darken(0.4, fg)};
     display: list-item;
 
-    @media only screen and (min-width: 560px) {
+    ${media.greaterThan(`560px`)`
       margin: 0 0 0 2.5rem;
-    }
+    `};
 
     &:hover {
       color: ${darken(0.2, fg)};

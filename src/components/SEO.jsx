@@ -6,12 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 const SEO = ({ description: propsDescription, meta, title: propsTitle }) => {
   const {
     site: {
-      siteMetadata: {
-        title: siteTitle,
-        description: siteDescription,
-        author,
-        manifest: { lang },
-      },
+      siteMetadata: { title: siteTitle, description: siteDescription, author, lang },
     },
   } = useStaticQuery(graphql`
     query SEOQuery {
@@ -20,19 +15,21 @@ const SEO = ({ description: propsDescription, meta, title: propsTitle }) => {
           title
           description
           author
-          manifest {
-            lang
-          }
+          lang
         }
       }
     }
   `);
 
-  const title = propsTitle ? `${propsTitle} - ${siteTitle}` : siteTitle;
+  const title = propsTitle ? `${propsTitle} | ${siteTitle}` : siteTitle;
   const description = propsDescription || siteDescription;
 
   return (
     <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
       meta={[
         {
           name: `description`,
@@ -67,10 +64,7 @@ const SEO = ({ description: propsDescription, meta, title: propsTitle }) => {
           content: description,
         },
       ].concat(meta)}
-    >
-      <html lang={lang} />
-      <title>{title}</title>
-    </Helmet>
+    />
   );
 };
 

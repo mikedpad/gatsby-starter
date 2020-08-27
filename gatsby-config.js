@@ -1,35 +1,19 @@
-const siteData = {
+const siteMetadata = {
   title: `Gatsby Starter`,
   description: `A slightly different flavor of the Gatsby starter.`,
   author: `Michael Daniel Padilla`,
-  manifest: {
-    background_color: `#ffffff`,
-    display: `minimal-ui`,
-    icons: [],
-    lang: `en-US`,
-    short_name: `GatsbyStarter`,
-    start_url: `/`,
-    theme_color: `#2f3740`,
-  },
+  siteUrl: `https://beyourownbossparty.com`,
+  lang: `en-US`,
 };
 
 module.exports = {
-  siteMetadata: siteData,
+  siteMetadata,
   pathPrefix: `/gatsby-starter`,
   plugins: [
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        // useMozJpeg: false,
         stripMetadata: true,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        ...siteData.manifest,
-        name: siteData.title,
-        description: siteData.description,
       },
     },
     {
@@ -40,6 +24,23 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: siteMetadata.title,
+        description: siteMetadata.description,
+        lang: siteMetadata.lang,
+        display: `minimal-ui`,
+        short_name: `GatsbyStarter`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#2f3740`,
+        icon: `src/images/favicon/icons-512.png`,
+        icon_options: {
+          purpose: `maskable`,
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -57,13 +58,26 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-plugin-web-font-loader`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        google: {
-          families: [
-            `Source Sans Pro:300,400,700`,
-            `Source Code Pro:400,400i,700`,
-            `Lora:300,400,400i,700`,
+        usePreconnect: true,
+        fonts: {
+          google: [
+            {
+              family: `Source Sans Pro`,
+              variants: [`300`, `400`, `700`],
+              fontDisplay: `swap`,
+            },
+            {
+              family: `Lora`,
+              variants: [`300`, `400`, `400i`, `700`],
+              fontDisplay: `swap`,
+            },
+            {
+              family: `Source Code Pro`,
+              variants: [`400`, `400i`, `700`],
+              fontDisplay: `swap`,
+            },
           ],
         },
       },

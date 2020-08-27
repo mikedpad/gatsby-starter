@@ -32,20 +32,20 @@ const Images = () => {
 
   return (
     <TestElement id="embedded__images" title="Images">
-      <h3>
+      <h2>
         No <code>&lt;figure&gt;</code> element
-      </h3>
+      </h2>
       <Img fluid={data.cat1.childImageSharp.fluid} alt="Cat 1" />
-      <h3>
+      <h2>
         Wrapped in a <code>&lt;figure&gt;</code> element, no <code>&lt;figcaption&gt;</code>
-      </h3>
+      </h2>
       <figure>
         <Img fluid={data.cat2.childImageSharp.fluid} alt="Cat 2" />
       </figure>
-      <h3>
+      <h2>
         Wrapped in a <code>&lt;figure&gt;</code> element, with a{` `}
         <code>&lt;figcaption&gt;</code>
-      </h3>
+      </h2>
       <figure>
         <Img fluid={data.cat3.childImageSharp.fluid} alt="Cat 3" />
         <figcaption>Here is a caption for this image.</figcaption>
