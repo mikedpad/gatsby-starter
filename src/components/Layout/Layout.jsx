@@ -1,14 +1,13 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { lighten } from 'polished';
 import media, { defaultBreakpoints } from 'styled-media-query';
 import Link from '../Link';
-import { bg, fg, links } from '../../styles/colors';
+import colors from '../../styles/colors';
 import SEO from '../SEO';
 
 const Header = styled.header`
-  background-color: ${lighten(0.05, bg)};
+  background-color: ${colors.bg.light};
 `;
 
 const Main = styled.main`
@@ -21,7 +20,6 @@ const Container = styled.div`
   flex-flow: ${props => props.orientation} nowrap;
   justify-content: space-between;
   margin: 0;
-
 
   ${media.greaterThan(`small`)`
     margin: 0 auto;
@@ -41,7 +39,7 @@ const Title = styled.h1`
 `;
 
 const TitleLink = styled(Link)`
-  color: ${fg};
+  color: ${colors.fg.default};
   text-decoration: none;
   transition: color 0.2s ease-out;
 
@@ -67,7 +65,7 @@ const ListItem = styled.li`
 
 const NavLink = styled(Link)`
   background-color: inherit;
-  color: ${links.normal};
+  color: ${colors.links.default};
   display: inline-block;
   font-size: 1.25rem;
   font-weight: 300;

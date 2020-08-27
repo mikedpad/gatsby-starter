@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import colors from '../../../styles/colors';
 import BackToTop from './BackToTop';
-import { fg } from '../../../styles/colors';
 
 const Article = styled.article`
   padding: 1rem 2rem;
 `;
 
 const Title = styled.h1`
-  border-bottom: 1px solid ${fg};
+  border-bottom: 1px solid ${colors.fg.default};
   color: #fff;
   margin-bottom: 0.67em;
   padding-bottom: 0.2em;

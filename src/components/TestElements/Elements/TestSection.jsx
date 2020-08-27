@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { lighten } from 'polished';
-import { bg } from '../../../styles/colors';
+import colors from '../../../styles/colors';
 
 const Title = styled.h1`
-  background-color: ${lighten(0.05, bg)};
+  background-color: ${colors.bg.light};
   color: #fff;
   font-size: 3rem;
   padding: 1rem 2rem;

@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { darken, lighten } from 'polished';
 import media from 'styled-media-query';
-import { links, fg, bg } from '../../styles/colors';
+import colors from '../../styles/colors';
 import toc from './toc.json';
 
 const Nav = styled.nav`
@@ -28,7 +27,7 @@ const ListItem = styled.li`
   display: block;
 
   ${UnorderedList} li & {
-    color: ${darken(0.4, fg)};
+    color: ${colors.fg.darker};
     display: list-item;
 
     ${media.greaterThan(`560px`)`
@@ -36,13 +35,13 @@ const ListItem = styled.li`
     `};
 
     &:hover {
-      color: ${darken(0.2, fg)};
+      color: ${colors.fg.dark};
     }
   }
 `;
 
 const TocLink = styled.a`
-  color: ${links.normal};
+  color: ${colors.links.default};
   display: block;
   font-size: 1.25rem;
   padding: 0.5em 0.7em;
@@ -50,8 +49,8 @@ const TocLink = styled.a`
   transition: background-color 0.2s ease-out;
 
   &:hover {
-    color: ${links.active};
-    background-color: ${lighten(0.05, bg)};
+    color: ${colors.links.active};
+    background-color: ${colors.bg.light};
   }
 
   ${ListItem} ${ListItem} & {
