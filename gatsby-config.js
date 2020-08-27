@@ -60,6 +60,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
+        formats: [`woff2`, `woff`],
+        useMinify: true,
+        usePreload: false,
         usePreconnect: true,
         fonts: {
           google: [
