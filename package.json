@@ -1,8 +1,9 @@
 {
   "name": "gatsby-starter",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "author": "Michael Daniel Padilla <michaeldpadilla@gmail.com> (https://mikedpad.com)",
   "description": "A Gatsby starter kit point for projects",
+  "homepage": "https://mikedpad.github.io/gatsby-starter/",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,7 +13,7 @@
     "clean": "rm -rf .cache",
     "lint": "eslint 'src/**/*.{js,jsx}'",
     "start": "npm run develop",
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "develop": "gatsby clean && gatsby develop -H 0.0.0.0",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
