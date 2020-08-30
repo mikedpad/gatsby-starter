@@ -12,6 +12,7 @@
   "scripts": {
     "clean": "rm -rf .cache",
     "lint": "eslint 'src/**/*.{js,jsx}'",
+    "format": "prettier --check 'src/**/*.{js,jsx}'",
     "start": "npm run develop",
     "build": "gatsby clean && gatsby build",
     "develop": "gatsby clean && gatsby develop -H 0.0.0.0",
