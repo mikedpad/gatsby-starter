@@ -9,9 +9,10 @@ const globalCssStyle = createGlobalStyle`
   :root {
     background-color: ${colors.bg.default};
     color: ${colors.fg.default};
+    font-family: ${sansSerif};
     margin: 0;
     padding: 0;
-    font-family: ${sansSerif};
+    text-rendering: geometricPrecision;
   }
 `;
 
