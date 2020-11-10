@@ -102,9 +102,7 @@ module.exports = {
               showCaptions: true,
               backgroundColor: `#222029`,
               quality: 60,
-              withWebp: {
-                quality: 80,
-              },
+              withWebp: true,
             },
           },
           // {
