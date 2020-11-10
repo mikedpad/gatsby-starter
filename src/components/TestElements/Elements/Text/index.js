@@ -1,4 +1,3 @@
-import React from 'react';
 import TestSection from '../TestSection';
 import Headings from './Headings';
 import Paragraphs from './Paragraphs';

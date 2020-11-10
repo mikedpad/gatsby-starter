@@ -1,4 +1,3 @@
-import React from 'react';
 import TestElement from '../TestElement';
 
 const InlineSVG = () => {

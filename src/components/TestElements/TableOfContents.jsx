@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 import colors from '../../styles/colors';
