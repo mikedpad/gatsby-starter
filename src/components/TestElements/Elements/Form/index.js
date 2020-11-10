@@ -1,3 +1,4 @@
+import React from 'react';
 import TestSection from '../TestSection';
 import InputFields from './InputFields';
 import SelectMenu from './SelectMenu';

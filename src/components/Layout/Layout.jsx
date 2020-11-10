@@ -1,3 +1,4 @@
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import media, { defaultBreakpoints } from 'styled-media-query';

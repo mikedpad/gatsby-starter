@@ -1,6 +1,6 @@
-import { createContext, useState } from 'react';
+import React, { useState } from 'react';
 
-const SiteContext = createContext([{}, () => {}]);
+const SiteContext = React.createContext([{}, () => {}]);
 
 const SiteProvider = ({ children }) => {
   const [state, setState] = useState({

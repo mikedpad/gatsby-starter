@@ -1,3 +1,4 @@
+import React from 'react';
 import TestSection from '../TestSection';
 import Images from './Images';
 import Audio from './Audio';
