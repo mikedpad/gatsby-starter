@@ -2,7 +2,7 @@ const siteMetadata = {
   title: `Gatsby Starter`,
   description: `A slightly different flavor of the Gatsby starter.`,
   author: `Michael Daniel Padilla`,
-  siteUrl: `https://beyourownbossparty.com`,
+  siteUrl: `https://https://mikedpad.github.io/gatsby-starter/`,
   lang: `en-US`,
 };
 

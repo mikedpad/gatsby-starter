@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/Layout';
 import PostPreview from '../components/PostPreview';
 
-export default () => {
+const Blog = () => {
   const {
     allMarkdownRemark: { edges },
   } = useStaticQuery(graphql`
@@ -43,3 +43,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default Blog;
